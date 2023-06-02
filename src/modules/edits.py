@@ -119,8 +119,11 @@ def undo(app: 'classes.MainWindow.MainWindow') -> None:
 
         # Create and add a highlight item to the scene
         utils.highlight_selected(app, index_0)
+        
+        # Retrieve the move_type from the last_action
+        move_type = last_action[3]
 
-        if not _temp:
+        if move_type == "SWITCH":
             # Retrieve the pixmap items corresponding to the cell indices
             item_0: Optional[QGraphicsPixmapItem] = _icons.get(index_0)
             item_1: Optional[QGraphicsPixmapItem] = _icons.get(index_1)
@@ -142,7 +145,7 @@ def undo(app: 'classes.MainWindow.MainWindow') -> None:
             _icons[index_0] = item_1
             _icons[index_1] = item_0
 
-        else:
+        elif move_type == "OVERWRITE":
             # Retrieve the pixmap item corresponding to index_1
             item: Optional[QGraphicsPixmapItem] = _icons[index_1]
             if item is not None:
@@ -156,8 +159,10 @@ def undo(app: 'classes.MainWindow.MainWindow') -> None:
                 pixmap_item.setPos(*maths.origin(*index_1))
                 app.main_view.scene.addItem(pixmap_item)
                 _icons[index_1] = pixmap_item
+            else:
+                del _icons[index_1]
 
-        _redo.append(("MOVE", cell_index, None, last_action[3]))
+        _redo.append(("MOVE", cell_index, None, move_type))
 
     elif _type == "OVERHAUL":
         # Create temporary files for all icons in the application
