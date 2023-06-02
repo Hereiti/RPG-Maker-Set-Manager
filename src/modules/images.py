@@ -46,7 +46,7 @@ def create_temp(app: 'classes.MainWindow.MainWindow', image: Optional[QGraphicsP
     Returns:
         str: The path of the temporary file.
     """
-    if not image:
+    if not image or not has_pixel(image.pixmap().toImage()):
         return None
 
     _temp = image.pixmap()
@@ -141,6 +141,8 @@ def image_at(app: 'classes.MainWindow.MainWindow', index: Tuple[int, int]) -> Op
     Returns:
         Optional[QGraphicsPixmapItem]: The QGraphicsPixmapItem at the specified index, or None if not found.
     """
+    if 
+    
     if index in app.icons:
         # Return the QGraphicsPixmapItem at the specified index
         return app.icons[index]
