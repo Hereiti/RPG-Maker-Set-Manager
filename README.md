@@ -1,7 +1,8 @@
 # RPG-Maker-Set-Manager
 ● This program is license under the GNU Lesser General Public License v3.0 (LGPL v3) ●  
 Short Desc: A relatively simple software which allows some images manipulations (designed for RPG Maker MZ)
-![Capture d’écran 2023-06-02 144551](https://github.com/Hereiti/RPG-Maker-Set-Manager/assets/40703838/7287bbdc-8a64-478c-9f6b-32de13e52d20)
+![Capture d’écran 2023-06-02 144551](https://github.com/Hereiti/RPG-Maker-Set-Manager/assets/40703838/b47f7685-bde6-41e8-bd26-86b3e7068ee2)
+
 
 #### Available Features:
 > - Add / Remove / Move / Switch
