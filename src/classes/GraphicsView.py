@@ -53,7 +53,7 @@ class GraphicsView(QGraphicsView):
         # Create the scene
         self.scene = QGraphicsScene()
         self.scene.setSceneRect(0, 0, maths.grid_col() * self._cell_size, maths.grid_row() * self._cell_size + 2)
-        self.setSceneRect(-2, -2, maths.grid_col() * self._cell_size + 6, self.scene.height() - 30)
+        self.setSceneRect(-2, -2, maths.grid_col() * self._cell_size + 6, self.scene.height() + 2)
         self.setScene(self.scene)
 
         # Draw the grid
