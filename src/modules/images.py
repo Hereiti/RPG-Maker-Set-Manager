@@ -239,6 +239,10 @@ def save_individually(app: 'classes.MainWindow.MainWindow') -> None:
 
     if folder_path:
         for index in app.icons:
+            
+            if not has_pixel(image_at(app, index).pixmap().toImage()):
+                continue
+            
             if config.get_config("Type") == "Tileset":
                 icon_name = f"tile_{index[1]}_{index[0]}.png"
             elif config.get_config("Type") == "Icon Set":
