@@ -3,7 +3,7 @@
 # Created Date: 22-05-2023 | 10:12:31
 # Author: Hereiti
 #================================================================================
-# Last Modified: 02-06-2023 | 10:52:24
+# Last Modified: 04-06-2023 | 01:19:20
 # Modified by: Hereiti
 #================================================================================
 # License: LGPL v3
@@ -19,8 +19,8 @@ from typing import Optional, Union, Tuple, List
 #================================================================================#
 # Third-Party Imports
 #================================================================================#
-from PySide6.QtCore import QPointF, Qt, QRectF
-from PySide6.QtGui import QKeyEvent, QMouseEvent, QImage, QWheelEvent
+from PySide6.QtCore import QPointF, Qt, QRectF, QMimeData
+from PySide6.QtGui import QKeyEvent, QMouseEvent, QImage, QWheelEvent, QDragEnterEvent, QDragMoveEvent, QDropEvent
 from PySide6.QtWidgets import QGraphicsView, QGraphicsPixmapItem, QGraphicsScene
 
 #================================================================================#
@@ -42,6 +42,7 @@ class GraphicsView(QGraphicsView):
         Custom GraphicsView class for handling mouse events and displaying graphics items.
         """
         super().__init__(parent)
+        self.setAcceptDrops(True)
 
         # Initialize attributes
         self.highlight_selected: Optional[Union[Highlight, Tuple[int, int]]] = None
@@ -259,3 +260,39 @@ class GraphicsView(QGraphicsView):
                 return
 
             icons.remove(self.parent(), self.highlight_selected[1], True)
+
+    def dragEnterEvent(self, event: QDragEnterEvent):
+        if event.mimeData().hasUrls():
+            event.acceptProposedAction()
+
+    def dropEvent(self, event: QDropEvent):
+        if event.mimeData().hasUrls():
+            urls = event.mimeData().urls()
+            for url in urls:
+                if url.isLocalFile() and url.toLocalFile().endswith('.png'):
+                    # Call your function with the dropped image file path
+                    image_path = url.toLocalFile()
+
+                    image = images.convert_to_srgb(image_path)
+
+                    if image.width() <= maths.cell_size() and image.height() <= maths.cell_size():
+                        # Map the mouse cursor position to the scene coordinates
+                        scene_pos = self.mapToScene(event.pos())
+                        _x, _y = scene_pos.x(), scene_pos.y()
+
+                        # Get the current cell index and clamp it within the grid bounds
+                        _index = maths.index(int(_x), int(_y))
+
+                        icons.add(self.parent(), image, _index)
+                    else:
+                        # Map the mouse cursor position to the scene coordinates
+                        scene_pos = self.mapToScene(event.pos())
+                        _x, _y = scene_pos.x(), scene_pos.y()
+
+                        # Get the current cell index and clamp it within the grid bounds
+                        _index = maths.index(int(_x), int(_y))
+                        icons.load(self.parent(), image, True, False, _index)
+                    break
+
+    def dragMoveEvent(self, event: QDragMoveEvent):
+        event.acceptProposedAction()
