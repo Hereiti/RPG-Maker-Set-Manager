@@ -3,7 +3,7 @@
 # Created Date: 26-05-2023 | 19:28:22
 # Author: Hereiti
 #================================================================================
-# Last Modified: 02-06-2023 | 11:25:18
+# Last Modified: 04-06-2023 | 01:20:08
 # Modified by: Hereiti
 #================================================================================
 # License: LGPL v3
@@ -151,8 +151,9 @@ def select_file(app: 'classes.MainWindow.MainWindow') -> Optional[QImage]:
     file_path, _ = QFileDialog.getOpenFileName(app, "Open File", "", "PNG Files (*.png)")
 
     if file_path:
+        image = images.convert_to_srgb(file_path)
         # Return the QImage of the selected file
-        return QImage(file_path)
+        return QImage(image)
 
     return None
 
@@ -206,7 +207,7 @@ def new(app: 'classes.MainWindow.MainWindow') -> None:
     app.undo = []
     app.redo = []
 
-def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage] = None, history: bool = False) -> None:
+def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage]= None, history: bool = False, _reset: bool=False, _index: Tuple[int, int]= (0, 0)) -> None:
     """
     Open an image in the application by creating pixmap items from the image and adding them to the scene.
 
@@ -214,6 +215,8 @@ def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage] = None, h
         app: The instance of the MainWindow class.
         image: The QImage to open in the application. If None, a file dialog will be shown to select an image.
         history: A flag indicating whether to create a history entry for the open operation.
+        _reset: Should the scene be reset before loading the new image
+        _index: Where should the loop starts
 
     Returns:
         None.
@@ -230,8 +233,9 @@ def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage] = None, h
             temp_path = images.create_temp_all(app)
             edits.history(app, "OVERHAUL", None, temp_path)
 
-        # Reset the application by removing existing pixmap items
-        reset(app)
+        if _reset:
+            # Reset the application by removing existing pixmap items
+            reset(app)
 
         for column in range(maths.grid_col()):
             for row in range(min(image.height() // cell_size, maths.grid_row())):
@@ -245,6 +249,10 @@ def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage] = None, h
                 if not images.has_pixel(icon):
                     continue
 
+                # Calculate the origin based on the index
+                cell_index = (column + _index[0], row + _index[1])
+                cell_origin = maths.origin(*cell_index)
+
                 # Create a pixmap with transparent background
                 pixmap = QPixmap(cell_size, cell_size)
                 pixmap.fill(Qt.GlobalColor.transparent)
@@ -254,13 +262,17 @@ def load(app: 'classes.MainWindow.MainWindow', image: Optional[QImage] = None, h
                 painter.drawImage(0, 0, icon)
                 painter.end()
 
+                if cell_index in app.icons:
+                    app.main_view.scene.removeItem(app.icons[cell_index])
+                    del app.icons[cell_index]
+
                 # Create a pixmap item with the pixmap and set its position
                 pixmap_item = QGraphicsPixmapItem(pixmap)
                 pixmap_item.setPos(*cell_origin)
 
                 # Add the pixmap item to the scene and store it in the icons dictionary
                 app.main_view.scene.addItem(pixmap_item)
-                app.icons[(column, row)] = pixmap_item
+                app.icons[cell_index] = pixmap_item
 
 def sheet(app: 'classes.MainWindow.MainWindow') -> None:
     """
@@ -355,7 +367,7 @@ def folder(app: 'classes.MainWindow.MainWindow') -> None:
 
         # Calculate the origin of the current cell
         cell_origin = maths.origin(col_i, row_i)
-        _icon = QImage(_icon_path)
+        _icon = images.convert_to_srgb(_icon_path)
 
         # Skip images without pixels
         if not images.has_pixel(_icon):
