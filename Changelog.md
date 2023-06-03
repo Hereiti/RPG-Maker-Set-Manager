@@ -5,7 +5,7 @@
   > - Properly delete index in the move icons event which was causing issue for max_col() and max_row()
   > - Prevent create temp image for empty cells
 
-# 1.1.0 - Small QoL Update:
+# 1.0.5 - Small QoL Update:
   > - Added: Drag/Drop of images from the explorer
   > - Added: Possibility to input the name for files created by "save_individually"
   > - Change: "Sheet" renamed to "Add After" which should be more explicit
