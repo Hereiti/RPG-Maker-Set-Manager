@@ -3,7 +3,7 @@
 # Created Date: 26-05-2023 | 00:41:01
 # Author: Hereiti
 #================================================================================
-# Last Modified: 02-06-2023 | 11:24:58
+# Last Modified: 04-06-2023 | 01:06:04
 # Modified by: Hereiti
 #================================================================================
 # License: LGPL v3
@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
         This method sets up the main window, creates UI elements, and displays the window.
 
         """
-        self.setWindowTitle("Set Manager (Version 1.0)")
+        self.setWindowTitle("Set Manager (Version 1.0.5)")
         self.setStyleSheet("background-color: #202020")
         self.setFixedSize(484 + maths.grid_col() * self.cell_size, 800)
 
@@ -129,7 +129,7 @@ class MainWindow(QMainWindow):
             QMenu::indicator:checked { background-color: green; width: 12px; height: 12px; }
         ''')
 
-        self.create_menu_actions(self.help_menu, ["Shortcuts", "About"])
+        self.create_menu_actions(self.help_menu, ["About"])
 
     def create_menu_actions(self, menu, actions) -> None:
         """Create menu actions from the given list and add them to the menu.
@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
     def create_buttons(self) -> None:
         """Create the buttons in the main window."""
         button_x, button_y, button_spacing = 8, 195, 54
-        button_items = ["New", "Open", "Sheet", "Folder", "-", "-", "-", "Save Selected", "Save Separately", "Save All"]
+        button_items = ["New", "Open", "Add After", "Folder", "-", "-", "-", "Save Selected", "Save Separately", "Save All"]
         for item in button_items:
             if item == "-":
                 button_y += button_spacing
