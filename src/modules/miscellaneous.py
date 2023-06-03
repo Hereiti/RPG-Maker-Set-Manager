@@ -3,7 +3,7 @@
 # Created Date: 23-05-2023 | 18:11:25
 # Author: Hereiti
 #================================================================================
-# Last Modified: 02-06-2023 | 11:26:13
+# Last Modified: 04-06-2023 | 01:05:45
 # Modified by: Hereiti
 #================================================================================
 # License: LGPL v3
@@ -34,8 +34,8 @@ def connect_buttons(app: 'classes.MainWindow.MainWindow') -> None:
     """
     # Connect buttons signals to their respective functions
     app.buttons["New"].clicked.connect(lambda: icons.new(app))
-    app.buttons["Open"].clicked.connect(lambda: icons.load(app))
-    app.buttons["Sheet"].clicked.connect(lambda: icons.sheet(app))
+    app.buttons["Open"].clicked.connect(lambda: icons.load(app, None, True, True))
+    app.buttons["Add After"].clicked.connect(lambda: icons.sheet(app))
     app.buttons["Folder"].clicked.connect(lambda: icons.folder(app))
     app.buttons["Save Selected"].clicked.connect(lambda: images.save_selected(app))
     app.buttons["Save Separately"].clicked.connect(lambda: images.save_individually(app))
