@@ -3,7 +3,7 @@
 # Created Date: 22-05-2023 | 13:22:52
 # Author: Hereiti
 #================================================================================
-# Last Modified: 02-06-2023 | 11:26:05
+# Last Modified: 04-06-2023 | 00:46:33
 # Modified by: Hereiti
 #================================================================================
 # License: LGPL v3
@@ -279,7 +279,7 @@ def highlight_selected(app: 'classes.MainWindow.MainWindow', cell_index) -> None
 
 def about() -> None:
     show_popup('''RPG Maker - Set Manager
-Version : 1.0
+Version : 1.0.5
 Author  : Costantin Hereiti
 License : LGPL v3
 Python  : 3.11.3 - 64Bit
