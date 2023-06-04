@@ -130,8 +130,8 @@ def has_pixel(image: QImage) -> bool:
     # Get the alpha channel of the image
     alpha = pil_image.split()[-1]
 
-    # Check if there are any fully opaque pixels (alpha = 255)
-    return any(pixel == 255 for pixel in alpha.getdata())
+    # Check if there are any visible pixels (alpha = 25)
+    return any(pixel >= 25 for pixel in alpha.getdata())
 
 def image_at(app: 'classes.MainWindow.MainWindow', index: Tuple[int, int]) -> Optional[QGraphicsPixmapItem]:
     """
