@@ -12,5 +12,5 @@
   
   ##### Fix(es):
   > - Convert images to sRGB color space
-  > - Check for fully opaque pixel instead of any pixel inside of "save_individually"
+  > - Check for pixel's alpha higher than 25 instead of any pixel inside of "save_individually"
   > - Change App title & "About" to properly reflect the version
