@@ -156,9 +156,9 @@ def new(app: 'classes.main_window.MainWindow') -> None:
 
     remove_images(app)
 
-    if app.main_view.highlight_selected:
-        app.main_view.scene.removeItem(app.main_view.highlight_selected)
-        app.main_view.highlight_selected = None
+    if app.main_view.highlight_selected[0]:
+        app.main_view.scene.removeItem(app.main_view.highlight_selected[0])
+        app.main_view.highlight_selected = [None, None]
 
     app.undo.clear()
     app.redo.clear()
