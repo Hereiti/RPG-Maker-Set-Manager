@@ -304,9 +304,6 @@ def paste(app: 'classes.main_window.MainWindow') -> None:
         _index = app.main_view.highlight_selected[1]
         _origin = maths.origin(_index)
 
-        # Remove the image from the selected cell
-        icons.remove(app, _index)
-
         # Add the copied image to the scene
         icons.add(app, app.copied_img, _index)
 
