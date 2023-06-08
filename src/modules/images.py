@@ -202,9 +202,9 @@ def save_separately(app: 'classes.main_window.MainWindow') -> None:
     if ok:
         name_prefix = name
     else:
-        if config.get_config("Type") == "Tileset":
+        if config.config_get("Type") == "Tileset":
             name_prefix = "tile"
-        elif config.get_config("Type") == "Icon Set":
+        elif config.config_get("Type") == "Icon Set":
             name_prefix = "icon"
         else:
             name_prefix = "item"
