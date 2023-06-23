@@ -9,12 +9,12 @@
 ![Capture d’écran 2023-06-23 232405](https://github.com/Hereiti/RPG-Maker-Set-Manager/assets/40703838/c6809956-4128-4eb4-8f00-0f4d81db7b2d)
 
 ## Table of Content
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-installation">Installation</a>
-  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-video_tutorial">Video Tutorial</a>
-  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-written_guide">Written Guide</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-Available_Features">Features</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-Changelog">Changelog</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/edit/main/readme.md#-Links">Links</a>
+* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-installation">Installation</a>
+  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-video_tutorial">Video Tutorial</a>
+  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-written_guide">Written Guide</a>
+* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-Available_Features">Features</a>
+* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-Changelog">Changelog</a>
+* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager/main/readme.md#-Links">Links</a>
 
 ## ⬇ Installation
 ### 🎬 Video Tutorial
