@@ -9,12 +9,12 @@
 ![Capture d’écran 2023-06-23 232405](https://github.com/Hereiti/RPG-Maker-Set-Manager/assets/40703838/c6809956-4128-4eb4-8f00-0f4d81db7b2d)
 
 ## Table of Content
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#installation">Installation</a>
-  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#video-tutorial">Video Tutorial</a>
-  * <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#written-guide">Written Guide</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#available-features">Features</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#latest-changelog">Changelog</a>
-* <a href="https://github.com/Hereiti/RPG-Maker-Set-Manager#links">Links</a>
+* Installation
+  * Video Tutorial
+  * Written Guide
+* Features
+* Changelog
+* Links
 
 ## ⬇ Installation
 ### 🎬 Video Tutorial
