@@ -59,7 +59,7 @@ Note: This guide concerns the building of this software for the latest release v
   <summary>CHANGED</summary>
 - CHANGED: `show_popup` to support RichText.<br>
 - CHANGED: Renamed "Type" to "Preset" in the menu.<br>
-- CHANGED: Whole code has been rewrote and cleaned.<br>
+- CHANGED: Whole code has been rewritten and cleaned.<br>
 - CHANGED: Renamed code's modules to better represent what they aim to do.<br>
 - CHANGED: Directly changes cell size to fit RPG Maker MZ Presets when selecting presets.<br>
 </details>
@@ -67,7 +67,7 @@ Note: This guide concerns the building of this software for the latest release v
 <details>
   <summary>FIXED</summary>
 - FIXED: `Rotate Slider`'s indicator detection radius has been better optimized.<br>
-- FIXED: `Load Folder` wasn't loading in a numerical order.<br>
+- FIXED: `Load Folder` wasn't loading in numerical order.<br>
 </details>
 
 ## 🔗 Links
