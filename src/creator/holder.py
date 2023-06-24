@@ -254,6 +254,20 @@ def add_weapon_layer(app, file_path, layer):
             app.layer_1[cell_index] = (pixmap_item, layer)
 
 
+def remove_weapon_layer(app):
+    if not app.layer_1:
+        return
+
+    # Loop through all item and save them
+    for item in app.main_view.scene.items():
+        if isinstance(item, QGraphicsPixmapItem):
+            for values in app.layer_1.values():
+                if item == values[0]:
+                    app.main_view.scene.removeItem(item)
+
+    app.layer_1.clear()
+
+
 def save_chara_with_weapon(app):
     if not app.images or not app.layer_1:
         return
@@ -645,6 +659,10 @@ def tree_view(app):
     app.toolbar.addWidget(button_remove)
     app.addToolBar(Qt.RightToolBarArea, app.toolbar)
 
+    button_save.clicked.connect(
+        lambda: save_chara_with_weapon(app))
+    button_remove.clicked.connect(
+        lambda: remove_weapon_layer(app))
     app.tree_view.data_thread = DataProcessingThread(
         label, weapon_folder[0].absolutePath(), _actor_classes)
     app.tree_view.data_thread.processed.connect(
