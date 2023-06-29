@@ -178,7 +178,7 @@ def save_all_together(app):
 
     if file_path:
         # Retrieve cell width and height from the app
-        cell_width, cell_height = app.cell_size()
+        cell_width, cell_height = app.cell_size
         width = maths.grid_col() * cell_width
         height = maths.grid_row() * cell_height
 
