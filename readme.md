@@ -1,7 +1,7 @@
 # RPG Maker - Set Manager
 ![Static Badge](https://img.shields.io/badge/License-LGPL_v3-blue?link=https%3A%2F%2Fwww.gnu.org%2Flicenses%2Flgpl-3.0)
 ![GitHub top language](https://img.shields.io/github/languages/top/Hereiti/RPG-Maker-Set-Manager)
-![Static Badge](https://img.shields.io/badge/Latest_Release-1.1.1-Green)
+![Static Badge](https://img.shields.io/badge/Latest_Release-1.1.2-Green)
 ![GitHub issues](https://img.shields.io/github/issues/Hereiti/RPG-Maker-Set-Manager)
 ![Static Badge](https://img.shields.io/badge/Itch.io-link-red?link=https%3A%2F%2Fhereiti.itch.io%2Frpg-maker-set-manager)
 <br>"RPG Maker - Set Manager" aims to simplify image manipulation for RPG Makers users.
@@ -22,7 +22,7 @@
 
 ### 📝 Written Guide
 Note: This guide concerns the building of this software for the latest release version:
-<br>![Static Badge](https://img.shields.io/badge/Latest_Release-1.1.1-Green)
+<br>![Static Badge](https://img.shields.io/badge/Latest_Release-1.1.2-Green)
 1. Install and open a <a href="https://gitforwindows.org/index.html">Git Bash</a> window
 2. Change the installation path using `cd "folder path"`
 3. Clone this repository with `$ git clone https://github.com/Hereiti/RPG-Maker-Set-Manager.git`
