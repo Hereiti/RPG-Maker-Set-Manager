@@ -59,3 +59,8 @@
 #### FIXED:
 - FIXED: `Rotate Slider`'s indicator detection radius has been better optimized.
 - FIXED: `Load Folder` wasn't loading in a numerical order.
+
+# [1.1.2 - ALPHA] - [29/06/2023] #minor_update:
+#### FIXED:
+- FIXED: Typo in `Save All Together` function.
+- FIXED: Typo in `Report Issue` function.
