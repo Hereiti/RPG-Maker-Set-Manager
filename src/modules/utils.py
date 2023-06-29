@@ -4,7 +4,7 @@ import re
 import sys
 import textwrap
 import traceback
-import github
+from github import Github
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap, qAlpha
 from PySide6.QtWidgets import QColorDialog, QDialog, QMessageBox
@@ -257,7 +257,7 @@ def report_issue():
         try:
             # Github Token won't be shared in source code
             # Github repo won't be shared in source code
-            github_ = github([Github_Token])  # noqa: F821
+            github_ = Github([Github_Token])  # noqa: F821
             repo = github_.get_repo([Github_Repo])  # noqa: F821
             repo.create_issue(title=title, body=desc, labels=["issue"])
 
