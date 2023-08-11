@@ -15,7 +15,10 @@ from classes import main_window
 from classes import dialogs
 from modules import config
 
-load_dotenv
+extDataDir = os.getcwd()
+if getattr(sys, 'frozen', False):
+    extDataDir = sys._MEIPASS
+load_dotenv(dotenv_path=os.path.join(extDataDir, '.env'))
 
 
 def has_valid_pixel(image):
