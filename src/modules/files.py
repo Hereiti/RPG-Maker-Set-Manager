@@ -242,7 +242,7 @@ def save_all_together(app):
         cell_width, cell_height = app.cell_size
 
         if (config.config_get("type") == "Icons"):
-            height = maths.max_row(app) * cell_height
+            height = (maths.max_row(app) + 1) * cell_height
         else:
             height = maths.grid_row() * cell_height
 
