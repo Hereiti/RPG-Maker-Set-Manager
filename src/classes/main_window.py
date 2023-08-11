@@ -25,7 +25,10 @@ from modules import maths
 from modules import misc
 from modules import utils
 
-load_dotenv()
+extDataDir = os.getcwd()
+if getattr(sys, 'frozen', False):
+    extDataDir = sys._MEIPASS
+load_dotenv(dotenv_path=os.path.join(extDataDir, '.env'))
 
 
 class MainWindow(QMainWindow):
