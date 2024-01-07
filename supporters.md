@@ -2,3 +2,4 @@
 <br>- Holder (<a href="https://holder-anibat.itch.io">itch.io</a>)
 <br>- reginaldbrown912 (<a href="https://itch.io/profile/reginaldbrown912">itch.io</a>)
 <br>- WERZAQUE (<a href="https://forums.rpgmakerweb.com/index.php?members/werzaque.238243/">RPG Maker Forum</a>)
+<br>- Richard Lee (<a href="https://forums.rpgmakerweb.com/index.php?members/piyan-glupak.94722/">RPG Maker Forum</a>)
